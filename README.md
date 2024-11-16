@@ -7,8 +7,6 @@
 
 Este script implementa una simulación de procesos concurrentes en C, donde múltiples lectores y escritores acceden de forma controlada a un recurso compartido.
 
-## Descripción
-
 El programa permite que varios procesos lectores accedan simultáneamente al recurso compartido, mientras que los escritores requieren acceso exclusivo. La coordinación entre lectores y escritores se realiza mediante el uso de semáforos y memoria compartida, asegurando la correcta sincronización y consistencia de los datos.
 
 ## Detalles
@@ -28,9 +26,11 @@ El programa permite que varios procesos lectores accedan simultáneamente al rec
 - `MAX_LECTORES`: Cantidad máxima de lectores.
 - `MAX_ESCRITORES`: Cantidad máxima de escritores.
 
-## Ejecución
+## Compilación y ejecución
 
-Compila el código con el siguiente comando:
-
-```bash
-gcc -o lectores_escritores lectores_escritores.c -lpthread
+1. Compila el programa:  
+   ```bash
+   gcc -o lectores_escritores lectores_escritores.c -lpthread
+2. Ejecuta el binario generado:
+   ```bash
+   ./lectores_escritores
