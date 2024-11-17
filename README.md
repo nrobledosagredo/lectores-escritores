@@ -1,9 +1,6 @@
 # Lectores y escritores
 
-![C](https://img.shields.io/badge/language-C-blue)
-![POSIX Semaphores](https://img.shields.io/badge/sync-POSIX--Semaphores-green)
-![Shared Memory](https://img.shields.io/badge/memory-Shared-yellow)
-![Concurrency](https://img.shields.io/badge/topic-Concurrency-orange)
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
 
 Este script implementa una simulación de procesos concurrentes en C, donde múltiples lectores y escritores acceden de forma controlada a un recurso compartido.
 
