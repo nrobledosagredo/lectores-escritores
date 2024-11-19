@@ -1,33 +1,36 @@
-# Lectores y escritores
+# Readers and writers problem
 
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
 
-Este script implementa una simulación de procesos concurrentes en C, donde múltiples lectores y escritores acceden de forma controlada a un recurso compartido.
+This script implements a simulation of concurrent processes in C, where multiple readers and writers access a shared resource in a controlled manner.
 
-El programa permite que varios procesos lectores accedan simultáneamente al recurso compartido, mientras que los escritores requieren acceso exclusivo. La coordinación entre lectores y escritores se realiza mediante el uso de semáforos y memoria compartida, asegurando la correcta sincronización y consistencia de los datos.
+The program allows multiple reader processes to access the shared resource simultaneously, while writers require exclusive access. Coordination between readers and writers is achieved using semaphores and shared memory, ensuring proper synchronization and data consistency.
 
-## Detalles
+## Details
 
-- **Procesos involucrados:**
-  - Lectores: Pueden leer el recurso al mismo tiempo.
-  - Escritores: Modifican el recurso con acceso exclusivo.
-- **Sincronización:** 
-  - Se utilizan semáforos POSIX (`sem_open`, `sem_wait`, `sem_post`) para evitar conflictos entre procesos.
-- **Memoria compartida:**
-  - `dato`: Variable compartida que es leída y escrita.
-  - `n_lectores`: Contador del número de lectores activos.
+- **Involved processes:**
+  - Readers: Can read the resource simultaneously.
+  - Writers: Modify the resource with exclusive access.
+- **Synchronization:**
+  - POSIX semaphores (`sem_open`, `sem_wait`, `sem_post`) are used to prevent conflicts between processes.
+- **Shared memory:**
+  - `data`: Shared variable that is read and written.
+  - `reader_count`: Counter for the number of active readers.
 
-## Parámetros configurables
+## Configurable parameters
 
-- `ITERACION`: Número de iteraciones para cada lector/escritor.
-- `MAX_LECTORES`: Cantidad máxima de lectores.
-- `MAX_ESCRITORES`: Cantidad máxima de escritores.
+- `ITERATION`: Number of iterations for each reader/writer.
+- `MAX_READERS`: Maximum number of readers.
+- `MAX_WRITERS`: Maximum number of writers.
 
-## Compilación y ejecución
+## Compilation and execution
 
-1. Compila el programa:  
+1. Compile the program:  
    ```bash
-   gcc -o lectores_escritores lectores_escritores.c -lpthread
-2. Ejecuta el binario generado:
+   gcc -o readers_writers readers_writers.c -lpthread
+   ```
+
+2. Run the generated binary:
    ```bash
-   ./lectores_escritores
+   ./readers_writers
+   ```
