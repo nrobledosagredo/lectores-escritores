@@ -2,18 +2,14 @@
 
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
 
-This script implements a simulation of concurrent processes in C, where multiple readers and writers access a shared resource in a controlled manner.
+This script simulates concurrent processes in C, where multiple readers and writers access a shared resource in a controlled manner. Multiple reader processes can access the resource simultaneously, while writers require exclusive access. Synchronization is achieved using semaphores and shared memory, ensuring proper coordination and data consistency. Created as part of a learning project to explore process synchronization in C.
 
-The program allows multiple reader processes to access the shared resource simultaneously, while writers require exclusive access. Coordination between readers and writers is achieved using semaphores and shared memory, ensuring proper synchronization and data consistency.
+## Features
 
-## Details
-
-- **Involved processes:**
-  - Readers: Can read the resource simultaneously.
-  - Writers: Modify the resource with exclusive access.
-- **Synchronization:**
-  - POSIX semaphores (`sem_open`, `sem_wait`, `sem_post`) are used to prevent conflicts between processes.
-- **Shared memory:**
+- **Readers**: Can read the shared resource simultaneously.
+- **Writers**: Modify the resource with exclusive access.
+- **Synchronization**: Utilizes POSIX semaphores (`sem_open`, `sem_wait`, `sem_post`) to prevent conflicts between processes.
+- **Shared memory**: 
   - `data`: Shared variable that is read and written.
   - `reader_count`: Counter for the number of active readers.
 
@@ -23,14 +19,16 @@ The program allows multiple reader processes to access the shared resource simul
 - `MAX_READERS`: Maximum number of readers.
 - `MAX_WRITERS`: Maximum number of writers.
 
-## Compilation and execution
+## How to run
 
-1. Compile the program:  
-   ```bash
-   gcc -o readers_writers readers_writers.c -lpthread
-   ```
+1. Compile the program:
+
+```bash
+gcc -o readers-writers-problem readers-writers-problem.c -lpthread
+```
 
 2. Run the generated binary:
-   ```bash
-   ./readers_writers
-   ```
+
+```bash
+./readers-writers-problem
+```
